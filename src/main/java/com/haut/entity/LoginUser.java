@@ -8,6 +8,7 @@ private int flag;//用户权限 管理员/普通教师
 private int ustate;//用户状态 禁用/正常
 private int tid;//教师号 =uid
 private int aid;//管理员号 =uid
+
 public int getUid() {
 	return uid;
 }
@@ -55,22 +56,13 @@ public void setAid(int aid) {
 	}
 	
 }
-public LoginUser(int uid, String upass, int flag, int ustate) {
+public LoginUser(int uid, String upass) {
 	super();
 	this.uid = uid;
 	this.upass = upass;
-	this.flag = flag;
-	this.ustate = ustate;
-	if(flag==0){
-		this.tid = 0;
-		this.aid = uid;
-	}else{
-		this.tid=uid;
-		this.aid=0;
-	}
-	
-	
+	this.tid=uid;
 }
+
 public LoginUser() {
 	super();
 	// TODO Auto-generated constructor stub

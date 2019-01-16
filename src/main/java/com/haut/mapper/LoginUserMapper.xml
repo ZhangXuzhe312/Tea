@@ -1,17 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 
 <!--接口式编程 namespace名字与接口的全类名相同，id与接口的抽象方法名相同  -->
 <mapper namespace="com.haut.dao.UserDao">
     
     <!--id:唯一标识; resultType:返回值类型,一般为javabean里的对象 -->
     <!--接口式编程 id与接口方法一致  -->
-    <select id="selUser" resultType="com.haut.entity.LoginUser" parameterType="com.haut.entity.LoginUser"> 
-    <!-- 从传入过来的参数值取出id值 -->
+    
+    <!--校验登录  -->
+    <select id="checkLogin" resultType="com.haut.entity.LoginUser" parameterType="com.haut.entity.LoginUser"> 
     select * from  t_loginuser where uid=#{uid} and upass=#{upass}
     </select>
-    <insert id="addUser">
-    INSERT INTO t_loginuser(upass)  VALUE(#{upass})
+    
+    <!--注册  -->
+    <!--  -->
+   <select id="yanChong"  resultType="com.haut.entity.LoginUser" parameterType="com.haut.entity.LoginUser">
+   	 SELECT * FROM t_loginuser l,t_teadetail t WHERE t.tid=#{tid};
+   </select>
+   
+   <insert id="teaRegeist">
+    INSERT INTO t_loginuser(uid,upass) VALUES((SELECT tid FROM t_teadetail WHERE tid=#{tid}),#{upass}) 
     </insert>
+    
+     <!--
+    <delete id="delUser">
+    delete from t_loginuser where uid=#{uid}
+    </delete>
+    
+    <update id="updateUser">
+    update t_loginuser set upass=#{upass} where uid=#{uid}
+    </update> -->
+    
     
 </mapper>

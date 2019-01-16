@@ -7,6 +7,10 @@
 <configuration>
 <!-- 引入jdbc资源文件 -->
 <properties resource="jdbc.properties"></properties> 
+	<!--必须放置于  properties 下 紧挨着-->
+	<settings>	
+		<setting name="logImpl" value="STDOUT_LOGGING" />
+	</settings>
     <!-- 可以配置多个运行环境，但是每个SqlSessionFactory 实例只能选择一个运行环境 -->
     <environments default="environment">
         <environment id="environment">
