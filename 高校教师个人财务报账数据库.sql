@@ -56,18 +56,18 @@ insert  into `t_declaredetail`(`did`,`ddetails`,`daccount`,`dprove`,`dtime`,`dst
 DROP TABLE IF EXISTS `t_loginuser`;
 
 CREATE TABLE `t_loginuser` (
-  `uid` int(11) NOT NULL AUTO_INCREMENT,
+  `uid` int(11) NOT NULL,
   `upass` varchar(20) NOT NULL DEFAULT '111',
   `flag` int(2) NOT NULL DEFAULT '1',
   `ustate` int(2) NOT NULL DEFAULT '1',
   `tid` int(11) DEFAULT NULL,
   `aid` int(11) DEFAULT NULL,
   PRIMARY KEY (`uid`)
-) ENGINE=InnoDB AUTO_INCREMENT=111118 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Data for the table `t_loginuser` */
 
-insert  into `t_loginuser`(`uid`,`upass`,`flag`,`ustate`,`tid`,`aid`) values (111,'111',1,1,111,NULL),(111111,'111',0,1,NULL,NULL),(111117,'233',1,1,NULL,NULL);
+insert  into `t_loginuser`(`uid`,`upass`,`flag`,`ustate`,`tid`,`aid`) values (111,'999',1,1,NULL,NULL),(1111,'111',1,1,111,NULL),(111111,'21313',0,1,NULL,NULL);
 
 /*Table structure for table `t_teadetail` */
 
