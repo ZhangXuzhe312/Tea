@@ -1,6 +1,6 @@
 package com.haut.entity;
 
-public class LoginUser {	
+public class LoginUser extends TeaDetail {	
 
 private int uid; //登录账号 
 private String upass;//用户登录密码
@@ -62,7 +62,11 @@ public LoginUser(int uid, String upass) {
 	this.upass = upass;
 	this.tid=uid;
 }
-
+public LoginUser(int uid) {
+	super();
+	this.uid = uid;
+	this.tid=uid;
+}
 public LoginUser() {
 	super();
 	// TODO Auto-generated constructor stub

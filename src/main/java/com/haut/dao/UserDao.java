@@ -4,11 +4,16 @@ import java.util.List;
 
 
 import com.haut.entity.LoginUser;
+import com.haut.entity.TeaDetail;
 
 public interface UserDao {
 	
 	//验证登录
 	List<LoginUser> checkLogin(LoginUser u);
+	
+	//ajax验证
+	LoginUser ajaxCheck(LoginUser u);
+	
 	//教师账号注册
 	List<LoginUser> yanChong(LoginUser u);
 	int teaRegeist(LoginUser u);

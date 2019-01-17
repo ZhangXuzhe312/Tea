@@ -29,8 +29,7 @@
         </div>
     </div>
    </form> 
-    
-    <script src="images/jquery.min.js"></script>
+
 
 
 <div style="text-align:center;">
@@ -38,17 +37,31 @@
 </div>
 <script src="./js/jquery-3.1.1.js"></script>
 <script>
-function num(j){
-	$.ajax({
-     type: "POST",
-     url: "CommentServlet?typeId="+j,
-     data: {},
-     dataType: "json",
-     success: function(result){
-    	 
-     }
-     })
-}
+
+/* $(function(){
+	$("button").click(function (){
+		if(){
+			
+		}
+		alert(1);
+	})
+}) */
+
+$(function (){
+	$("input:eq(0)").blur(function (){
+		$.ajax({
+			type: "POST",
+            url: "LoginRegisetAjax",
+            data: {"name":$("input:eq(0)").val()},
+            dataType: "json",
+            success: function(result){  
+            	console.log(result.data);
+            	
+            }
+		})
+	})
+})
+
 </script>
 </script>
 </body>

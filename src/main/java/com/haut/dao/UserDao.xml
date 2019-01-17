@@ -13,6 +13,11 @@
     select * from  t_loginuser where uid=#{uid} and upass=#{upass}
     </select>
     
+    <!--ajax验证账户是否存在  -->
+    <select id="ajaxCheck" resultType="com.haut.entity.LoginUser" parameterType="com.haut.entity.LoginUser"> 
+    SELECT t.tname FROM t_teadetail t, t_loginuser l WHERE l.uid=#{uid} AND t.tid=#{tid}
+    </select>
+    
     <!--注册  -->
     <!--  -->
    <select id="yanChong"  resultType="com.haut.entity.LoginUser" parameterType="com.haut.entity.LoginUser">
