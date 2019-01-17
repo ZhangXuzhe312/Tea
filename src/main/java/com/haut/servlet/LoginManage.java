@@ -47,10 +47,5 @@ public class LoginManage extends HttpServlet {
 			request.getRequestDispatcher("./pages/TeaSuc.jsp").forward(request, response);
 		}
 	}
-	
-	public static String na(){
-		String result="爸爸";
-		return result;
-	}
 
 }

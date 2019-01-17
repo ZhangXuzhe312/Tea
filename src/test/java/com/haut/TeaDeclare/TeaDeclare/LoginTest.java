@@ -10,7 +10,7 @@ public static void main(String[] args) {
 	
 	
 	
-	LoginUser u = new LoginUser(111,"999");
+	LoginUser u = new LoginUser(111);
 	LoginMethods loginMethods = new LoginMethods();
 
 	//登录校验
@@ -22,7 +22,8 @@ public static void main(String[] args) {
 	System.out.println(regeistTea);*/
 	
 	//ajax验证
-	loginMethods.ajaxCheck(u);
+	System.out.println(loginMethods.ajaxCheck(u));
+
 
 	
 	

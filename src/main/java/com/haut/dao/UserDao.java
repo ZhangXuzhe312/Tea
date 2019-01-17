@@ -14,9 +14,11 @@ public interface UserDao {
 	//ajax验证
 	LoginUser ajaxCheck(LoginUser u);
 	
-	//教师账号注册
-	List<LoginUser> yanChong(LoginUser u);
-	int teaRegeist(LoginUser u);
+	//教师账号注册(前提是输入账号的时候已经判断过该账号可以使用)
+	
+	boolean teaRegeist(LoginUser u);
+	
+	
 	//修改找回密码
 	boolean findBackPass(LoginUser u);
 	

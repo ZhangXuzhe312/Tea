@@ -35,17 +35,15 @@ public class LoginMethods {
 	}
 	
 	//ajax验证
-	
 	public boolean ajaxCheck(LoginUser u){
 		SqlSession openSession = null;
 		try {
 			openSession = DBSession.openSession();
 			UserDao mapper = openSession.getMapper(UserDao.class);
 			LoginUser ajaxCheck = mapper.ajaxCheck(u);
-			if(ajaxCheck.getTname()==null){	
+			if(ajaxCheck==null){	
 				return false;
-			}
-			
+			}	
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -53,32 +51,30 @@ public class LoginMethods {
 			openSession.close();
 		}
 			return true;
-
-		/*return false;*/
 		
 	}
 	
 	
-	
-	
+
 	//注册
-/*	public boolean regeistTea(LoginUser u){
-		
+	public static boolean regeistTea(LoginUser u){
+		SqlSession openSession=null;
 		 try {
-			SqlSession openSession = DBSession.openSession();
+			 openSession = DBSession.openSession();
 			UserDao mapper = openSession.getMapper(UserDao.class);
-			int teaRegeist = mapper.teaRegeist(u);
-			System.out.println(teaRegeist);
-
-			openSession.commit();
+			boolean teaRegeist = mapper.teaRegeist(u);
 			
+			if(teaRegeist){
+				openSession.commit();
+				return true;
+			}		
 		} catch (IOException e) {
-			return false;
+			
+		}finally{
+			openSession.close();
 		}
-		
-		return true;
-		
+		return false;
 	}
-	*/
+	
 	
 }
