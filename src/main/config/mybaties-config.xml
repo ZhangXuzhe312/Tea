@@ -29,6 +29,8 @@
     
     <!--写好的sql文件一定要注册到全局配置文件中,如果在包下就com/...,如果都在config下,直接写名字  -->
     <mappers>
-        <mapper resource="com/haut/mapper/LoginUserMapper.xml"/>
+      <!--   <mapper resource="com/haut/mapper/LoginUserMapper.xml"/> -->
+      <!--包扫描  -->
+        <package name="com.haut.dao"/>
     </mappers>
 </configuration>

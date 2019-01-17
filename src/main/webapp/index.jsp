@@ -16,7 +16,7 @@
         <div class="logo"></div>
         <div class="form-item">
             <input id="username" type="text" autocomplete="off" placeholder="账号" name="username">
-            <p class="tip">请输入合法的账号</p>
+            <p class="tip">请输入合法的账号</p> 
         </div>
         <div class="form-item">
             <input id="password" type="password" autocomplete="off" placeholder="登录密码" name="upwd">
@@ -36,6 +36,20 @@
 <div style="text-align:center;">
 
 </div>
-
+<script src="./js/jquery-3.1.1.js"></script>
+<script>
+function num(j){
+	$.ajax({
+     type: "POST",
+     url: "CommentServlet?typeId="+j,
+     data: {},
+     dataType: "json",
+     success: function(result){
+    	 
+     }
+     })
+}
+</script>
+</script>
 </body>
 </html>
