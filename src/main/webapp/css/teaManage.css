@@ -1,0 +1,15 @@
+ *{
+            margin: 0px;
+            padding: 0px;
+        }
+       li{
+           text-align: center;
+           line-height: 115px;
+
+       }
+        a{
+            text-decoration: none;
+            color: black;
+            font-family: "黑体";
+            font-size: large;
+        }
