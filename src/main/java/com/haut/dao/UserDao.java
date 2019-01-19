@@ -4,7 +4,7 @@ import java.util.List;
 
 
 import com.haut.entity.LoginUser;
-import com.haut.entity.TeaDetail;
+
 
 public interface UserDao {
 	

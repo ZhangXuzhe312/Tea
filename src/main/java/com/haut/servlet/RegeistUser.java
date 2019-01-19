@@ -7,8 +7,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.haut.entity.LoginUser;
-import com.haut.service.LoginMethods;
 import com.haut.util.JSONUtil;
 
 @WebServlet("/RegeistUser")

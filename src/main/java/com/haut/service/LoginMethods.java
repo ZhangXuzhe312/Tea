@@ -4,11 +4,11 @@ import java.io.IOException;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
-import org.junit.Test;
+
 
 import com.haut.dao.UserDao;
 import com.haut.entity.LoginUser;
-import com.haut.entity.TeaDetail;
+
 import com.haut.util.DBSession;
 
 public class LoginMethods {
@@ -75,6 +75,10 @@ public class LoginMethods {
 		}
 		return false;
 	}
+	
+	
+
+	
 	
 	
 }

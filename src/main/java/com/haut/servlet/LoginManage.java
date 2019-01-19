@@ -1,10 +1,13 @@
 package com.haut.servlet;
 import java.io.IOException;
 import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import javax.websocket.Session;
 
 import com.haut.entity.LoginUser;
 import com.haut.service.LoginMethods;
@@ -27,7 +30,10 @@ public class LoginManage extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		HttpSession session = null;
 		//解决账号可能为空字符串(前端可以解决)
+		/*ServletRequest session = null;*/
 		int zhanghao;
 		if(request.getParameter("username")==""){
 			 zhanghao=0;
@@ -42,8 +48,12 @@ public class LoginManage extends HttpServlet {
 		if(flag==-1){
 			request.getRequestDispatcher("index.jsp").forward(request, response);
 		}else if(flag==0){
+			request.getSession().setAttribute("zhanghao",zhanghao );
+			/*session.setAttribute("zhanghao",zhanghao );*/
 			request.getRequestDispatcher("./pages/AdminSuc.jsp").forward(request, response);
 		}else{
+			request.getSession().setAttribute("zhanghao",zhanghao );
+			/*session.setAttribute("zhanghao",zhanghao );*/
 			request.getRequestDispatcher("./pages/TeaSuc.jsp").forward(request, response);
 		}
 	}
